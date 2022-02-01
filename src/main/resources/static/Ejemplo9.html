@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo 9</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <a href="Ejemplo8.html">Back</a>|
+        <a href="index.html">Home</a>|
+        <a href="Ejemplo2.html">Next</a><br>
+        <h1>Registro de Clientes</h1>
+        <form action="#" method="POST"><!-- Etiqueta para crear formularios, cuenta
+            con los métodos GET y POST para obtener la información, se recomienda
+            más utilizar el médoto POST ya que éste no muestra la información 
+            obtenida en la URL al momento de que el usuario la envíe-->
+            <label>Nombre: </label><!-- Ingresa etiquetas en la página-->
+            <input placeholder="Nombre" type="text" name="nombre" size="20"/>
+            <!-- La etiqueta input guarda la información digitada por el usaurio,
+            cuenta con varios atributos para su modificación-->
+            <br>
+            <label>Apellidos: </label>
+            <input placeholder="Apellidos" type="text" name="apellidos" size="30"/>
+            <br>
+            <label>Correo: </label>
+            <input placeholder="Correo" type="email" name="correo" size="40"/>
+            <br>
+            <input type="submit" value="Registrar" name="Boton"/><!-- Esta etiqueta
+            está adaptada para aparecer como un botón por el valor submit definido
+            en el atributo type-->
+        </form>
+    </body>
+</html>
