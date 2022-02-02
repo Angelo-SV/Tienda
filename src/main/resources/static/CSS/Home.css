@@ -1,0 +1,60 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 feb. 2022, 18:32:42
+    Author     : assv9
+*/
+/*
+Se pueden modificar estilos a un etiqueta en general, también se pueden crear estilos
+de etiquetas anidados.
+Existen unidades de medida: 
+vh (1/100) relación de uno entre 100 
+% respecto al elemento padre
+Cover: Cubre todo el div, sin distorcionar la imagen.
+Padding: Crear un espacio entre los componentes.
+Box-sizing: Altura = Altura+Borde+Padding
+Margin: Espacio alrededor de elementos, afuera de cualquier borde.
+Display: Cómo se muestra/comporta un bloque de nivel
+Pointer: El mouse cambia a otro tipo de punteros.
+Inline-Block: Genera un bloque de los que estamos mostrando
+*/
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../Images/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-righ: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 160px;
+    cursor: pointer;
+}
+
+nav{
+    flex: 1;
+    padding-left: 60px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #ff00ff;
+}
