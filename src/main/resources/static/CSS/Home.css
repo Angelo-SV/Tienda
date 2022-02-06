@@ -3,8 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 1 feb. 2022, 18:32:42
-    Author     : assv9
+    Es más común crear los estilos en un documento de CSS aparte como acontinuación
 */
 /*
 Se pueden modificar estilos a un etiqueta en general, también se pueden crear estilos
@@ -20,7 +19,10 @@ Display: Cómo se muestra/comporta un bloque de nivel
 Pointer: El mouse cambia a otro tipo de punteros.
 Inline-Block: Genera un bloque de los que estamos mostrando
 */
-.container{
+.container{ /*Las etiquetas que se encuentran antes de las llaves son llamadas
+            selectores, existe de tipo de objeto y de tipo clase las cuales 
+            incluyen varios elementos de a modificar de la página a la vez. Todo
+            lo que se incluye entre las llaves se conocen como reglas CSS*/
     height: 100vh;
     width: 100%;
     background-image: url(../Images/background.png);
@@ -48,7 +50,8 @@ nav{
     padding-left: 60px;
 }
 
-nav ul li{
+nav ul li{/*Las etiquetas anidadas como selectores se conocen como Selectores 
+    decendentes*/
     display: inline-block;
     list-style: none;
     margin: 0px 20px;
