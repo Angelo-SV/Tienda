@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- URL / path= relativa (Basicamente esta alojada dentro de nuestro host)-->
+<!-- URL / path= absoluta (Basicamente esta alojada en un host externo)-->
+<!-- Formatos de videos permitidos: mp4, ogg, ogv, webm-->
+<html>
+    <head>
+        <title>Video Background</title>
+        <link rel="stylesheet" href="css/videos.css">
+    </head>
+    <body>
+        <section class="content">
+            <video autoplay loop muted controls><!-- Inserta videos en la página, el atributo
+            autoplay lo reproduce cada vez que se carga la página, el atributo 
+            loop reproduce el video de forma infinita y el atributo muted permite
+            que se reproduzca el video sin sonido, este requisito es obligatorio
+            para reproducirlo, el atributo controls muestra los controles del video-->
+            <source src="video/video.mp4"><!-- Enlace relativo porque está dentro 
+            de nuestro host-->
+        </video>
+            <header>
+                <h2 class="logo">Travel</h2>
+            </header>
+            <div class="text">
+                <h2>Never Stop to </h2>
+                <h3>Exploring th World</h3>
+                <p>This is the main page for</p>
+                <a href="index.html">Explore</a>
+            </div>
+            <ul class="social">
+                <li><a href="#"><img src="https://cdn-icons.flaticon.com/png/512/2504/premium/2504903.png?token=exp=1644370533~hmac=ff88bc99270063f5c7711575b5f6a9b9"></a></li>
+                <li><a href="#"><img src="https://cdn-icons.flaticon.com/png/512/2504/premium/2504965.png?token=exp=1644370579~hmac=ff9932d4bba5a7f49cfc0e984481d991"></a></li>
+                <li><a href="#"><img src="https://cdn-icons.flaticon.com/png/512/3938/premium/3938036.png?token=exp=1644370613~hmac=86c1598287738127696dbb40ad0048bf"></a></li>
+            </ul>
+        </section>
+    </body>
+</html>
