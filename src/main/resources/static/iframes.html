@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!-- Indica que HTML 5 es la sintaxis del proyecto para todos los
+exploradores web-->
+<!-- Éstas son las etiquetas para comentarios -->
+<!-- El archivo index es el documento que el navegador ejecuta por defecto -->
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta y demás
+etiquetas para la semántica del body-->
+<html lang="es"> <!-- Marca el incio del texto HTML, el atributo lang le indica
+    a los navegadores que la pagina estará escrita en español-->
+    <head> <!-- Encabezado y configuración general de la página, contiene 
+        información que el usuario no va a ver-->
+        <title>Tienda en Línea</title>
+        <meta charset="UTF-8"> <!-- Codificación del texto (caracteres especiales
+                               entre otros) -->
+        <meta name="description" content="Esta página contiene etiquetas del tipo
+              html 5 y luego enlaces o definicion de estilos css3"><!-- Las 
+        etiquetas meta añaden descripciones del código para uso del navegador-->
+        <meta name="keywords" content="html5, ccs3, web, fidélitas">
+        <link href="CSS/estilos.css" rel="stylesheet" type="text/css"/><!-- Etiqueta que llama la
+        hoja de estilos CSS-->
+    </head>
+    <body> <!-- Cuerpo del proyecto, todo lo que el usuario ve en el explorador -->
+        <header id="encabezado"><!-- Etiqueta para ofrecerle al navegador información de que es 
+            un encabezado, mediente un atributo se está llamando al selector de 
+            una hoja de estilos en CSS-->
+            <h1>TechShop</h1>
+        </header>
+        <nav id="menu"><!-- Esta etiqueta es para ilustrarle al navegador que es un menú -->
+            <a href="ejemplo9.html">Back</a>|<!-- Enlaces de referencia dentro del 
+        mismo sitio, es una etiqueta de hipervínculo, href: hipervinculo reference-->
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"><!-- Etiqueta para indicar que es una barra lateral que puede ser 
+            a la izquierda o a la derecha y pueden ser varias-->
+            <h2>Productos más vendidos</h2> <!-- Encabezado de nivel uno, por teoría toda
+            página sólo debe tener un encabezado de nivel uno (heading)-->
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tempor orci, 
+                nascetur mauris mi aenean vitae mattis interdum inceptos, torquent 
+                quisque lacinia proin feugiat odio risus condimentum. Nam praesent 
+                duis ridiculus nibh cum nullam nisi at magnis, maecenas suspendisse 
+                quam quisque mattis tortor curae interdum vitae, natoque auctor 
+                senectus felis faucibus donec augue dictumst. Convallis donec eros 
+                rhoncus accumsan inceptos consequat taciti, sapien vestibulum nisl 
+                tempus eleifend vel blandit, sem est dapibus dis phasellus enim.</p>
+            <!-- Párrafo, la etiqueta añade un enter o un "salto de línea" 
+            automáticamente -->
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplos de iFrames</h2>
+            <article><!-- Señala al navegador que el contenido dentro de éstas  
+                etiquetas corresponden a un artículo, pueden llevar las etiquetas
+                header y footer-->
+                <header><h3>La página de la Fidélitas</h3></header>
+                <iframe src="https://sistemas.ufidelitas.ac.cr/" width="700" 
+                        height="400"></iframe>
+                <footer>Escuela de Sistemas de la Fide</footer>
+            </article>
+            <article>
+                <header><h3>Video de YouTube</h3></header>
+               <iframe width="500" height="280" 
+                       src="https://www.youtube.com/embed/vz4z0RLcAyk" 
+                       title="YouTuber" frameborder="0" allow="accelerometer; 
+                       autoplay; clipboard-write; encrypted-media; gyroscope; 
+                   picture-in-picture" allowfullscreen></iframe>
+                <footer>Alguien mostrado HTML5</footer>
+            </article>
+            <article>
+                <header><h3>Stem Center</h3></header>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9805915448346!2d-84.03794158541865!3d9.935572592895356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3aa66fa362b%3A0xf134cee2340078e2!2sStem%20Center%20Fid%C3%A9litas!5e0!3m2!1ses!2scr!4v1644634624850!5m2!1ses!2scr" 
+                    width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
+                <footer>La ubicación del Stem Center en Google Maps</footer>
+            </article>
+        </section>
+        <footer id="piepagina">
+            Derechos Reservados &COPY; 2022 <address style="display: inline">
+                Tel 8899-7744</address><!-- 
+            Muestra información de contacto, realiza un salto de                                                                                      
+            línea-->
+        </footer>
+        <h1>Ejercicio en clase Semana 2</h1>
+        <div><!-- Define un bloque en la página, ampliamente utilizado por los
+            diseñadores web, div: división. Realiza divisiones lógicas para agrupar
+            elementos y así poder darles características específicas-->
+            <ol>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ol>
+            <ul>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ul>
+        </div>
+        <div>
+            <p>Este curso es super genial,<br> me gusta mucho HTML</p>
+            <h1>Hola Mundo</h1>
+            <h2>Hola Mundo</h2>
+            <h3>Hola Mundo</h3>
+            <h4>Hola Mundo</h4>
+            <h5>Hola Mundo</h5>
+            <h6>Hola Mundo</h6>
+        </div>
+        <img src="images/cart.png" alt="Imagen de carro">
+        <iframe src="https://www.youtube.com/embed/3NJ24lHVNao" width="500" 
+                height="400"></iframe><!-- Nos permite ingresar código HTML de otro 
+                sitio dentro de nuestro código, es un enlace absoluto-->
+        <a href="home.html">Home</a>
+
+    </body>
+</html> <!-- Marca el final del texto HTML -->

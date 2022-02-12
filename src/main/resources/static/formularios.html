@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!-- Indica que HTML 5 es la sintaxis del proyecto para todos los
+exploradores web-->
+<!-- Éstas son las etiquetas para comentarios -->
+<!-- El archivo index es el documento que el navegador ejecuta por defecto -->
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta y demás
+etiquetas para la semántica del body-->
+<html lang="es"> <!-- Marca el incio del texto HTML, el atributo lang le indica
+    a los navegadores que la pagina estará escrita en español-->
+    <head> <!-- Encabezado y configuración general de la página, contiene 
+        información que el usuario no va a ver-->
+        <title>Tienda en Línea</title>
+        <meta charset="UTF-8"> <!-- Codificación del texto (caracteres especiales
+                               entre otros) -->
+        <meta name="description" content="Esta página contiene etiquetas del tipo
+              html 5 y luego enlaces o definicion de estilos css3"><!-- Las 
+        etiquetas meta añaden descripciones del código para uso del navegador-->
+        <meta name="keywords" content="html5, ccs3, web, fidélitas">
+        <link href="CSS/estilos.css" rel="stylesheet" type="text/css"/><!-- Etiqueta que llama la
+        hoja de estilos CSS-->
+    </head>
+    <body> <!-- Cuerpo del proyecto, todo lo que el usuario ve en el explorador -->
+        <header id="encabezado"><!-- Etiqueta para ofrecerle al navegador información de que es 
+            un encabezado, mediente un atributo se está llamando al selector de 
+            una hoja de estilos en CSS-->
+            <h1>TechShop</h1>
+        </header>
+        <nav id="menu"><!-- Esta etiqueta es para ilustrarle al navegador que es un menú -->
+            <a href="ejemplo9.html">Back</a>|<!-- Enlaces de referencia dentro del 
+        mismo sitio, es una etiqueta de hipervínculo, href: hipervinculo reference-->
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"><!-- Etiqueta para indicar que es una barra lateral que puede ser 
+            a la izquierda o a la derecha y pueden ser varias-->
+            <h2>Productos más vendidos</h2> <!-- Encabezado de nivel uno, por teoría toda
+            página sólo debe tener un encabezado de nivel uno (heading)-->
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tempor orci, 
+                nascetur mauris mi aenean vitae mattis interdum inceptos, torquent 
+                quisque lacinia proin feugiat odio risus condimentum. Nam praesent 
+                duis ridiculus nibh cum nullam nisi at magnis, maecenas suspendisse 
+                quam quisque mattis tortor curae interdum vitae, natoque auctor 
+                senectus felis faucibus donec augue dictumst. Convallis donec eros 
+                rhoncus accumsan inceptos consequat taciti, sapien vestibulum nisl 
+                tempus eleifend vel blandit, sem est dapibus dis phasellus enim.</p>
+            <!-- Párrafo, la etiqueta añade un enter o un "salto de línea" 
+            automáticamente -->
+        </aside>
+        <section id="contenido">
+            <h2>Ejemplos de Formularios</h2>
+            <article><!-- Señala al navegador que el contenido dentro de éstas  
+                etiquetas corresponden a un artículo, pueden llevar las etiquetas
+                header y footer-->
+                <form action="#">
+                    <label>button: </label><input type="button" value="Enviar" 
+                                                  id="button"><br>
+                    <label>checkbox: </label><input type="checkbox" name="checkbox"><br>  
+                    <label>color: </label><input type="color" name="color"><br>  
+                    <label>date: </label><input type="date" name="date"><br>  
+                    <label>datetime-local: </label><input type="datetime-local" 
+                                                   name="datetime-local"><br>  
+                    <label>email: </label><input type="email" name="email" 
+                                                 placeholder=""><br>  
+                    <label>file: </label><input type="file" name="file"><br>  
+                    <label>hidden: </label><input type="hidden" name="hidden"><br>  
+                    <label>search: </label><input type="search" name="search" 
+                                                  placeholder=""><br>  
+                    <label>submit: </label><input type="submit" name="submit"><br>  
+                    <label>tel: </label><input type="tel" value="tel" 
+                                               placeholder=""><br>  
+                    <label>text: </label><input type="text" name="text" 
+                                                placeholder=""><br>  
+                    <label>time: </label><input type="time" name="time"><br>  
+                    <label>url: </label><input type="url" name="url" 
+                                               placeholder=""><br>  
+                    <label>week: </label><input type="week" name="week"><br>  
+                    <label>image: </label><input type="image" name="image" 
+                                                 alt="image"><br>  
+                    <label>month: </label><input type="month" name="month"><br>  
+                    <label>number: </label><input type="number" name="number" 
+                                                  placeholder=""><br>  
+                    <label>password: </label><input type="password" name="password" 
+                                                    placeholder=""><br>  
+                    <label>radio: </label><input type="radio" name="radio"><br>  
+                    <label>range: </label><input type="range" name="range" min="16" 
+                                                 max="88"><br>  
+                    <label>reset: </label><input type="reset" name="reset"><br>
+                </form>
+        </section>
+        <footer id="piepagina">
+            Derechos Reservados &COPY; 2022 <address style="display: inline">
+                Tel 8899-7744</address><!-- 
+            Muestra información de contacto, realiza un salto de                                                                                      
+            línea-->
+        </footer>
+        <h1>Ejercicio en clase Semana 2</h1>
+        <div><!-- Define un bloque en la página, ampliamente utilizado por los
+            diseñadores web, div: división. Realiza divisiones lógicas para agrupar
+            elementos y así poder darles características específicas-->
+            <ol>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ol>
+            <ul>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ul>
+        </div>
+        <div>
+            <p>Este curso es super genial,<br> me gusta mucho HTML</p>
+            <h1>Hola Mundo</h1>
+            <h2>Hola Mundo</h2>
+            <h3>Hola Mundo</h3>
+            <h4>Hola Mundo</h4>
+            <h5>Hola Mundo</h5>
+            <h6>Hola Mundo</h6>
+        </div>
+        <img src="images/cart.png" alt="Imagen de carro">
+        <iframe src="https://www.youtube.com/embed/3NJ24lHVNao" width="500" 
+                height="400"></iframe><!-- Nos permite ingresar código HTML de otro 
+                sitio dentro de nuestro código, es un enlace absoluto-->
+        <a href="home.html">Home</a>
+
+    </body>
+</html> <!-- Marca el final del texto HTML -->

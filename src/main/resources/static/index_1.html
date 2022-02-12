@@ -1,0 +1,212 @@
+<!DOCTYPE html> <!-- Indica que HTML 5 es la sintaxis del proyecto para todos los
+exploradores web-->
+<!-- Éstas son las etiquetas para comentarios -->
+<!-- El archivo index es el documento que el navegador ejecuta por defecto -->
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta y demás
+etiquetas para la semántica del body-->
+<html lang="es"> <!-- Marca el incio del texto HTML, el atributo lang le indica
+    a los navegadores que la pagina estará escrita en español-->
+    <head> <!-- Encabezado y configuración general de la página, contiene 
+        información que el usuario no va a ver-->
+        <title>Tienda en Línea</title>
+        <meta charset="UTF-8"> <!-- Codificación del texto (caracteres especiales
+                               entre otros) -->
+        <meta name="description" content="Esta página contiene etiquetas del tipo
+              html 5 y luego enlaces o definicion de estilos css3"><!-- Las 
+        etiquetas meta añaden descripciones del código para uso del navegador-->
+        <meta name="keywords" content="html5, ccs3, web, fidélitas">
+        <link href="CSS/menu.css" rel="stylesheet" type="text/css"/><!-- Etiqueta que llama la
+        hoja de estilos CSS-->
+    </head>
+    <body> <!-- Cuerpo del proyecto, todo lo que el usuario ve en el explorador -->
+        <header class="header"><!-- Etiqueta para ofrecerle al navegador información de que es 
+            un encabezado, mediente un atributo se está llamando al selector de 
+            una hoja de estilos en CSS-->
+            <nav class="nav"><!-- Esta etiqueta es para ilustrarle al navegador que es un menú -->
+                <a href="index.html" class="logo nav-link">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="ejemplo9.html">&LeftTriangleBar;</a></li><!-- Enlaces de referencia dentro del 
+                     mismo sitio, es una etiqueta de hipervínculo, href: hipervinculo reference-->
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="ejemplo2.html">&RightTriangle;</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="audios.html">Audios</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="videos.html">Videos</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="iframes.html">iFrames</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" 
+                        href="formularios.html">Formularios</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside id="barralateral"><!-- Etiqueta para indicar que es una barra lateral que puede ser 
+            a la izquierda o a la derecha y pueden ser varias-->
+            <h2>Productos más vendidos</h2> <!-- Encabezado de nivel uno, por teoría toda
+            página sólo debe tener un encabezado de nivel uno (heading)-->
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tempor orci, 
+                nascetur mauris mi aenean vitae mattis interdum inceptos, torquent 
+                quisque lacinia proin feugiat odio risus condimentum. Nam praesent 
+                duis ridiculus nibh cum nullam nisi at magnis, maecenas suspendisse 
+                quam quisque mattis tortor curae interdum vitae, natoque auctor 
+                senectus felis faucibus donec augue dictumst. Convallis donec eros 
+                rhoncus accumsan inceptos consequat taciti, sapien vestibulum nisl 
+                tempus eleifend vel blandit, sem est dapibus dis phasellus enim.</p>
+            <!-- Párrafo, la etiqueta añade un enter o un "salto de línea" 
+            automáticamente -->
+        </aside>
+        <section id="contenido">
+            <h2>Artículos Principales</h2>
+            <article><!-- Señala al navegador que el contenido dentro de éstas  
+                etiquetas corresponden a un artículo, pueden llevar las etiquetas
+                header y footer-->
+                <header>Portatil XRT 5000</header>
+                <p>Lorem ipsum dolor sit amet consectetur 
+                    adipiscing, elit mattis himenaeos sociosqu vel donec, eleifend blandit 
+                    suspendisse pulvinar massa. Lectus nisi viverra interdum urna ante 
+                    cursus sem elementum non ultrices cubilia tortor, luctus vel vehicula 
+                    nam montes litora iaculis nostra condimentum sed ullamcorper, phasellus 
+                    hendrerit class nascetur ut sociis vitae eleifend metus quisque dictum. 
+                    Varius mus nascetur vitae tellus suscipit duis sociosqu neque, integer 
+                    commodo facilisi cursus torquent felis lacinia leo aliquet, class 
+                    egestas facilisis mauris viverra hac pretium. At hendrerit vestibulum 
+                    blandit dapibus eleifend odio luctus eu, posuere maecenas orci tellus 
+                    dignissim porta aptent mauris faucibus, fusce feugiat imperdiet suscipit 
+                    habitant purus non. <!-- Etiqueta con estilos de texto -->
+                <footer>Agregar al Carrito</footer>
+                <figure>
+                    <img src="Images/Equipo1.jpg" alt="Desktop XRT 5000" width="250"/>
+                </figure>
+            </article>
+            <article>
+                <header>Alienware ATD 9000</header>
+                <p>Blandit cubilia scelerisque fusce imperdiet Está inspirada en 
+                    la película <cite>Alien el Octavo Pasajero</cite><!-- Muestra
+                    una referencia, una citación (en letra itálica)-->
+                    ac platea sociis curae, venenatis per convallis sociosqu risus aliquam 
+                    quis morbi, vel integer rhoncus feugiat donec nam arcu. Curae facilisi 
+                    ac tortor diam velit venenatis lobortis justo in cum netus, nullam 
+                    nascetur class habitant euismod potenti volutpat vulputate et eros, 
+                    urna nibh pharetra rhoncus ornare vehicula inceptos proin fringilla 
+                    tellus. Eget morbi suspendisse tincidunt in arcu faucibus sociis magnis, 
+                    risus libero tortor sem quam magna ut phasellus nullam, est auctor 
+                    potenti donec platea ridiculus eros.
+                <footer>Agregar al Carrito</footer>
+                <figure>
+                    <img src="Images/Equipo2.jpg" alt="Alienware"/>
+                    <figcaption>Más vendido</figcaption><!-- Agrega una  
+                    descripción a la imagen-->
+                </figure>
+            </article>
+            <article>
+                <header>Impresora 3D Portable</header>
+                <p>Ullamcorper habitant tempus per vel odio eu 
+                    porttitor phasellus duis ridiculus dapibus fermentum aenean, blandit 
+                    himenaeos malesuada eleifend viverra netus natoque conubia augue risus 
+                    dictum. Varius nunc tempor sed aenean sodales quam cubilia fusce, porta 
+                    venenatis suspendisse feugiat habitant vulputate imperdiet, himenaeos 
+                    tempus eleifend class est fermentum conubia. Inceptos arcu diam eros 
+                    fusce dictumst parturient fames, scelerisque rhoncus morbi fermentum 
+                    egestas curabitur curae, hac odio volutpat penatibus bibendum luctus. 
+                    Sed netus nascetur integer curabitur sociosqu hendrerit senectus dui, 
+                    quis rhoncus sociis est aptent pharetra varius, viverra tincidunt etiam 
+                    porttitor aenean ut blandit.
+                <footer>Agregar al Carrito</footer>
+                <figure>
+                    <img src="Images/Equipo3.jpg" alt="3D Print"/>
+                    <figcaption>Más económico</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Resumen de Lineas Generales</header>
+                <p>Ullamcorper habitant tempus per vel odio eu 
+                    porttitor phasellus duis ridiculus dapibus fermentum aenean, blandit 
+                    himenaeos malesuada eleifend viverra netus natoque conubia augue risus 
+                    dictum. Varius nunc tempor sed aenean sodales quam cubilia fusce, porta 
+                    venenatis suspendisse feugiat habitant vulputate imperdiet, himenaeos 
+                    tempus eleifend class est fermentum conubia. Inceptos arcu diam eros 
+                    fusce dictumst parturient fames, scelerisque rhoncus morbi fermentum 
+                    egestas curabitur curae, hac odio volutpat penatibus bibendum luctus. 
+                    Sed netus nascetur.  
+
+                <table border="0"><!-- Crea una tabla -->
+                    <thead><!-- Encabezado de la tabla -->
+                        <tr id="encabezadoTabla">
+                            <th>Código</th><!-- Encabezado de la tabla Columna 1-->
+                            <th>Detalle</th><!-- Encabezado de la tabla Columna 2 -->
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen"><!-- Cuerpo de la tabla -->
+                        <tr>
+                            <td>1</td><!-- Fila uno, Columna 1 -->
+                            <td>Porttitor aenean ut blandit</td><!-- Fila 1,  
+                            Columna 2-->
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Varius viverra tincidunt etiam </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sociis est aptent pharetra</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Varius viverra tincidunt etiam </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Senectus dui quis rhoncus</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Integer curabitur sociosqu hendrerit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </section>
+        <footer id="piepagina">
+            Derechos Reservados &COPY; 2022 <address style="display: inline">
+                Tel 8899-7744</address><!-- 
+            Muestra información de contacto, realiza un salto de 
+                                                                                                    
+            línea-->
+        </footer>
+        <h1>Ejercicio en clase Semana 2</h1>
+        <div><!-- Define un bloque en la página, ampliamente utilizado por los
+            diseñadores web, div: división. Realiza divisiones lógicas para agrupar
+            elementos y así poder darles características específicas-->
+            <ol>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ol>
+            <ul>
+                <li>Progra 1</li>
+                <li>Progra 2</li>
+                <li>Progra 3</li>
+                <li>Progra 4</li>
+            </ul>
+        </div>
+        <div>
+            <p>Este curso es super genial,<br> me gusta mucho HTML</p>
+            <h1>Hola Mundo</h1>
+            <h2>Hola Mundo</h2>
+            <h3>Hola Mundo</h3>
+            <h4>Hola Mundo</h4>
+            <h5>Hola Mundo</h5>
+            <h6>Hola Mundo</h6>
+        </div>
+        <img src="images/cart.png" alt="Imagen de carro">
+        <iframe src="https://www.youtube.com/embed/3NJ24lHVNao" width="500" 
+                height="400"></iframe><!-- Nos permite ingresar código HTML de otro 
+                sitio dentro de nuestro código, es un enlace absoluto-->
+        <a href="home.html">Home</a>
+
+    </body>
+</html> <!-- Marca el final del texto HTML -->
