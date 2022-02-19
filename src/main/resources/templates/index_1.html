@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<-<!-- Las páginas HMTL son las "vistas" de los controladores, son las que se 
+muestran al usuario y solamente funcionan en la carpeta templates o plantillas-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Listado de Clientes</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="clientes:${cliente}">
+                    <td th:text="${clientes.nombre}"></td>
+                    <td th:text="${clientes.apellidos}"></td>
+                    <td th:text="${clientes.correo}"></td>
+                    <td th:text="${clientes.telefono}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
