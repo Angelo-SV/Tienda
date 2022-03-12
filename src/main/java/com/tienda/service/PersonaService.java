@@ -6,31 +6,36 @@ import com.tienda.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-@Service
+import org.springframework.transaction.annotation.Transactional;
+/*De la capa de negocio se debe implementar un servicio, por lo que se debe crear
+un interface y una clase que lo implemente como tal*/
+@Service/*Define que la clase es de tipo servicio*/
 public class PersonaService implements IPersonaService{
-    //Inyección de dependencias
-    @Autowired
+    
+    @Autowired//Inyección de dependencias
     private PersonaRepository personaRepository;
 
     @Override
+    @Transactional(readOnly = true)
     public List<Persona> getAllPerson() {
         return (List<Persona>)personaRepository.findAll();
     }
 
     @Override
+    @Transactional
     public void savePerson(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        personaRepository.save(persona);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Persona getPersonById(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return personaRepository.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional
     public void delete(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        personaRepository.deleteById(id);
     }
-    
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service /*Informará al controller que ésta clase es accesible como servicio desde
-el controler*/
+el controller*/
 public class ClienteServiceImpl implements ClienteService {
     
     @Autowired

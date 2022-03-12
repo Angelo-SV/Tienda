@@ -10,7 +10,7 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <h2>Datos de Cliente</h2>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/index_1}">Regresar</a>
         <br/>
             <form th:action="@{/guardarCliente}" method="post" th:object="${cliente}">
                 <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
@@ -20,13 +20,13 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
                 <label for="apellidos">Apellidos: </label>
                 <input type="text" name="apellidos" th:field="*{apellidos}"/>
                 <br/>
-                <label for="correo">Correo: </label>
-                <input type="email" name="correo" th:field="*{correo}"/>
+                <label for="email">Correo: </label>
+                <input type="email" name="email" th:field="*{correo}"/>
                 <br/>
                 <label for="telefono">Teléfono: </label>
-                <input type="tel" name="telefono" th:field="*{teléfono}"/>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
                 <br/>
-                <input type="submit" name="guardar" value="Guardar"/>       
+                <button type="submit" value="Guardar">Guardar</button>       
             </form>  
         <footer th:replace="layout/plantilla :: footer"/>
     </body>

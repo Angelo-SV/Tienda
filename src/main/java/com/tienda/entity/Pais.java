@@ -8,11 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity 
-@Table (name="paises")
+@Entity /*Define que la clase es una entidad, mapea la base de datos*/
+@Table (name="paises")/*La entidad obtiene información de la tabla que contiene
+como nombre paises*/
 public class Pais implements Serializable{
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)/*Indica que el primary Key
+    es autoincremental*/
     private long id;
     private String pais;
 
