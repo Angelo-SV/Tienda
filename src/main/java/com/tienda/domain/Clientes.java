@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -26,6 +28,11 @@ public class Clientes implements Serializable{/*La clase debe implementar
     private String apellidos;
     private String correo;
     private String telefono;
+    
+    @JoinColumn(name="id_credito", referencedColumnName = "id_credito")/*Agrega la 
+    asociación con la clase/tabla crédito*/
+    @ManyToOne/*Especifica el tipo de asociación*/
+    private Credito credito;
 
     public Clientes() {
     }
@@ -36,4 +43,15 @@ public class Clientes implements Serializable{/*La clase debe implementar
         this.correo = correo;
         this.telefono = telefono;
     }
+
+    public Clientes(Long idcliente, String nombre, String apellidos, String correo, String telefono, Credito credito) {
+        this.idcliente = idcliente;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.credito = credito;
+    }
+    
+    
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Las páginas HMTL son las "vistas" de los controladores, son las que se 
+muestran al usuario y solamente funcionan en la carpeta templates o plantillas-->
+<html xmlns:th="http://www.thymeleaf.org">  <!-- Con ésta etiqueta se hace el  
+    llamado a la librería thymeleaf la cual es una biblioteca Java que implementa
+    un motor de plantillas XML/XHTML/HTML5 que pueden extenderse en modos web.-->
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
+        y luego el nombre de la plantilla a utilizar-->
+        <div class="contenido">
+        <h2>Listado de Clientes</h2>
+        <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a> <!-- Los modelos se llaman 
+        en las vistas por medio de una expresión lambda (función que no está vinculada 
+        a un identificador): ${objeto del modelo}. Esto lo que hace es pasar una
+        variable por medio del model.-->
+        <div th:if="${clientes != null and !clientes.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Limite</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="clientes:${cliente}">
+                        <td th:text="${clientes.nombre}"></td>
+                        <td th:text="${clientes.apellidos}"></td>
+                        <td th:text="${clientes.correo}"></td>
+                        <td th:text="${clientes.telefono}"></td>
+                        <td th:text="${#nombers.formatDecimal(clientes.credito.limite,3,2)}"
+                            style="text-align: right"></td>
+                        <td><a th:href="@{/cliente/modificar} + ${clientes.idcliente}">Modificar</a></td>
+                        <td><a th:href="@{/cliente/eliminar} + ${clientes.idcliente}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${cliente != null or cliente.empty}">
+            No tenemos lista de clientes que mostrar...
+        </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

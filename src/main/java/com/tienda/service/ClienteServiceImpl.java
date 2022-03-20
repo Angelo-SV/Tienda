@@ -2,7 +2,9 @@
 package com.tienda.service;
 
 import com.tienda.dao.ClienteDao;
+import com.tienda.dao.CreditoDao;
 import com.tienda.domain.Clientes;
+import com.tienda.domain.Credito;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ public class ClienteServiceImpl implements ClienteService {
     
     @Autowired
     private ClienteDao clienteDao;
+    @Autowired
+    private CreditoDao creditoDao;
 
     @Override
     @Transactional(readOnly = true)/*Se le instruye a la base de datos que la 
@@ -25,6 +29,9 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     @Transactional
     public void save(Clientes clientes) {
+        Credito credito = clientes.getCredito();
+        credito = creditoDao.save(credito);
+        clientes.setCredito(credito);
         clienteDao.save(clientes);
     }
 

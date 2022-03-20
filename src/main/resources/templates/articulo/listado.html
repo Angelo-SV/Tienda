@@ -6,33 +6,43 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
     un motor de plantillas XML/XHTML/HTML5 que pueden extenderse en modos web.-->
     <head>
         <title>TechShop</title>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
         y luego el nombre de la plantilla a utilizar-->
         <div class="contenido">
-        <h2>Nuestros Artículos</h2>
+        <h2>Listado de Articulos</h2>
+        <a th:href="@{/articulo/nuevo}">Nuevo Artículo</a> <!-- Los modelos se llaman 
+        en las vistas por medio de una expresión lambda (función que no está vinculada 
+        a un identificador): ${objeto del modelo}. Esto lo que hace es pasar una
+        variable por medio del model.-->
         <div th:if="${articulos != null and !articulos.empty}">
             <table border="1">
                 <thead>
                     <tr>
                         <th>Descripcion</th>
                         <th>Precio</th>
-                        <th>Comprar</th>
+                        <th>Existencias</th>
+                        <th>Activa</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="articulo:${articulos}">
                         <td th:text="${articulo.descripcion}"></td>
-                        <td th:text="${articulo.precio}"></td>
-                        <td><a th:href="@{/carrito/agregar/} + ${atriculo.idarticulo}">Agregar</a></td>
+                        <td th:text="${#numbers.formatDecimal(articulo.precio,3,2)}"
+                            style="text-align: right"></td>
+                        <td th:text="${articulo.existencias}" style="text-align: center"></td>
+                        <td><input type="checkbox" name="activo" th:checked="${articulo.activo}" 
+                                   disabled="true"></td>
+                        <td><a th:href="@{/articulo/modificar/} + ${articulo.idarticulo}">Modificar</a></td>
+                        <td><a th:href="@{/articulo/eliminar/} + ${articulo.idarticulo}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div th:if="${articulos  != null or articulos.empty}">
+        <div th:if="${articulos != null or articulos.empty}">
             No tenemos lista de articulos que mostrar...
         </div>
         </div>
