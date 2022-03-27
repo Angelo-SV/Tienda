@@ -13,27 +13,29 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
         <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
         y luego el nombre de la plantilla a utilizar-->
         <div class="contenido">
-        <h2>Nuestros Artículos</h2>
+        <h2 th:text="#{index_1.titulo}">Nuestros Artículos</h2>
         <div th:if="${articulos != null and !articulos.empty}">
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Comprar</th>
+                        <th th:text="#{articulo.descripcion}">Descripcion</th>
+                        <th th:text="#{articulo.precio}">Precio</th>
+                        <th th:text="#{articulo.comprar}">Comprar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="articulo:${articulos}">
                         <td th:text="${articulo.descripcion}"></td>
                         <td th:text="${articulo.precio}"></td>
-                        <td><a th:href="@{/carrito/agregar/} + ${atriculo.idarticulo}">Agregar</a></td>
+                        <td><a th:href="@{/carrito/agregar/} + ${atriculo.idarticulo}"
+                               th:text="#{accion.agregar}">Agregar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div th:if="${articulos  != null or articulos.empty}">
-            No tenemos lista de articulos que mostrar...
+            <p th:text="@{articulo.no_mostrar}">No tenemos lista de articulos que 
+                mostrar...</p>
         </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

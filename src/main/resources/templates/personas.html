@@ -11,14 +11,14 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
-                    <th>Email</th>
-                    <th>Teléfono</th>
+                    <th th:text="#{cliente.nombre}">Nombre</th>
+                    <th th:text="#{cliente.apellidos}">Primer Apellido</th>
+                    <th th:text="#{cliente.apellidos}">Segundo Apellido</th>
+                    <th th:text="#{cliente.correo}">Email</th>
+                    <th th:text="#{cliente.telefono}">Teléfono</th>
                     <th>Pais</th>
-                    <th>Eliminar</th>
-                    <th>Modificar</th>
+                    <th th:text="#{accion.eliminar}">Eliminar</th>
+                    <th th:text="#{accion.actualizar}">Modificar</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,10 +31,12 @@
                     <td th:text="${user.getTelefono}"></td>
                     <td th:text="${user.getPais.getPais}"></td>
                     <td>
-                        <a th:href="@{/eliminarPersona/{id}(id=${user.getId})}">Eliminar</a>
+                        <a th:href="@{/eliminarPersona/{id}(id=${user.getId})}"
+                           th:text="#{accion.eliminar}">Eliminar</a>
                     </td>
                     <td>
-                        <a th:href="@{/modificarPersona/{id}(id=${user.getId})}">Modificar</a>
+                        <a th:href="@{/modificarPersona/{id}(id=${user.getId})}"
+                           th:text="#{accion.actualizar}">Modificar</a>
                     </td>
                 </tr>
             </th:block>

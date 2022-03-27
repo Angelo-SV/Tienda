@@ -7,19 +7,19 @@
         <a th:href="@{/personas}">Regresar</a>
             <form th:action="@{/guardarPersona}" method="post" th:object="${persona}">
                 <input type="hidden" name="idpersona" th:field="*{id}"/>
-                <label for="nombre">Nombre: </label>
+                <label for="nombre" th:text="#{cliente.nombre}">Nombre: </label>
                 <input type="text" name="nombre" th:field="*{nombre}"/>
                 <br/>
-                <label for="primerApellido">Primer apellido: </label>
+                <label for="primerApellido" th:text="#{cliente.apellido}">Primer apellido: </label>
                 <input type="text" name="apellido1" th:field="*{apellido1}"/>
                 <br/>
-                <label for="segundoApellido">Segundo apellido: </label>
+                <label for="segundoApellido" th:text="#{cliente.apellido}">Segundo apellido: </label>
                 <input type="text" name="apellido2" th:field="*{apellido2}"/>
                 <br/>
-                <label for="telefono">Teléfono: </label>
+                <label for="telefono" th:text="#{cliente.telefno}">Teléfono: </label>
                 <input type="tel" name="telefono" th:field="*{telefono}"/>
                 <br/>
-                <label for="correo">Correo: </label>
+                <label for="correo" th:text="#{cliente.correo}">Correo: </label>
                 <input type="email" name="correo" th:field="*{email}"/>
                 <br/>
                 <label for="pais">País: </label>

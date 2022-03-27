@@ -10,18 +10,32 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
-            <h2>Datos de Articulos</h2>
-        <a th:href="@{/articulo/listado}">Regresar</a>
+            <h2 th:text="#{articulo.datos}">Datos de Articulos</h2>
+        <a th:href="@{/articulo/listado}" th:text="#{accion.regresar}">Regresar</a>
         <br/>
             <form th:action="@{/articulo/guardar}" method="post" th:object="${articulo}">
                 <input type="hidden" name="idarticulo" th:field="*{idarticulo}"/>
-                <label for="descripcion">Descripcion: </label>
+                <label for="categoria" th:text="#{articulo.categoria}">Categoria: </label>
+                <select th:field="*{idCategoria}">
+                    <option th:each="categoria:${categorias}" 
+                            th:value="${categoria.idCategoria}" 
+                            th:value="${categoria.descripcion}"/>
+                </select>
+                <br/>
+                <label for="descripcion" th:text="#{articulo.descripcion}">Descripcion: </label>
                 <input type="text" name="Descripcion" th:field="*{descripcion}"/>
                 <br/>
-                <label for="activa">Activa: </label>
+                <label for="detalle" th:text="#{articulo.detalle}">Detalle: </label>
+                <textarea name="detalle" th:field="*{detalle}" rows="6" cols="50"/>
+                <br/>
+                <label for="precio" th:text="#{articulo.precio}">Precio: </label>
+                <input type="number" name="precio" th:field="*{precio}"/>
+                <br/>
+                <label for="activa" th:text="#{articulo.activo}">Activa: </label>
                 <input type="checkbox" name="activo" th:field="*{activo}"/>
                 <br/><br/>
-                <button type="submit" value="Guardar">Guardar</button>       
+                <button type="submit" value="Guardar" th:text="#{accion.guardar}">
+                    Guardar</button>       
             </form>  
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

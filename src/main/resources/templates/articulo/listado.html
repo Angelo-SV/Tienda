@@ -13,19 +13,21 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
         <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
         y luego el nombre de la plantilla a utilizar-->
         <div class="contenido">
-        <h2>Listado de Articulos</h2>
-        <a th:href="@{/articulo/nuevo}">Nuevo Artículo</a> <!-- Los modelos se llaman 
-        en las vistas por medio de una expresión lambda (función que no está vinculada 
-        a un identificador): ${objeto del modelo}. Esto lo que hace es pasar una
-        variable por medio del model.-->
+        <h2 th:text="#{articulo.titulo}">Listado de Articulos</h2>
+        <a th:href="@{/articulo/nuevo}" th:text="#{articulo.nuevo}">Nuevo Artículo</a> <!-- 
+            Los modelos se llaman en las vistas por medio de una expresión lambda 
+            (función que no está vinculada a un identificador): ${objeto del modelo}. 
+            Esto lo que hace es pasar una variable por medio del model.-->
         <div th:if="${articulos != null and !articulos.empty}">
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Existencias</th>
-                        <th>Activa</th>
+                        <th th:text="#{articulo.descripcion}">Descripcion</th>
+                        <th th:text="#{articulo.precio}">Precio</th>
+                        <th th:text="#{articulo.existencias}">Existencias</th>
+                        <th th:text="#{articulo.activo}">Activa</th>
+                        <th th:text="#{articulo.actualizar}">Modificar</th>
+                        <th th:text="#{articulo.eliminar}">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,14 +38,17 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
                         <td th:text="${articulo.existencias}" style="text-align: center"></td>
                         <td><input type="checkbox" name="activo" th:checked="${articulo.activo}" 
                                    disabled="true"></td>
-                        <td><a th:href="@{/articulo/modificar/} + ${articulo.idarticulo}">Modificar</a></td>
-                        <td><a th:href="@{/articulo/eliminar/} + ${articulo.idarticulo}">Eliminar</a></td>
+                        <td><a th:href="@{/articulo/modificar/} + ${articulo.idarticulo}"
+                               th th:text="#{accion.actualizar}">Modificar</a></td>
+                        <td><a th:href="@{/articulo/eliminar/} + ${articulo.idarticulo}"
+                               th th:text="#{accion.eliminar}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div th:if="${articulos != null or articulos.empty}">
-            No tenemos lista de articulos que mostrar...
+            <p th:text="@{articulo.no_mostrar}">No tenemos lista de articulos que 
+                mostrar...</p>
         </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

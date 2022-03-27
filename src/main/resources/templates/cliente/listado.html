@@ -13,22 +13,22 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
         <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
         y luego el nombre de la plantilla a utilizar-->
         <div class="contenido">
-        <h2>Listado de Clientes</h2>
-        <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a> <!-- Los modelos se llaman 
-        en las vistas por medio de una expresión lambda (función que no está vinculada 
-        a un identificador): ${objeto del modelo}. Esto lo que hace es pasar una
-        variable por medio del model.-->
+        <h2 th:text="#{cliente.titulo}">Listado de Clientes</h2>
+        <a th:href="@{/cliente/nuevo}" th:text="#{cliente.nuevo}">Nuevo Cliente</a> <!-- 
+            Los modelos se llaman en las vistas por medio de una expresión lambda 
+            (función que no está vinculada  un identificador): ${objeto del modelo}. 
+            Esto lo que hace es pasar una variable por medio del model.-->
         <div th:if="${clientes != null and !clientes.empty}">
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Limite</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
+                        <th th:text="#{cliente.nombre}">Nombre</th>
+                        <th th:text="#{cliente.apellidos}">Apellidos</th>
+                        <th th:text="#{cliente.correo}">Correo</th>
+                        <th th:text="#{cliente.telefono}">Teléfono</th>
+                        <th th:text="#{cliente.limite}">Limite</th>
+                        <th th:text="#{cliente.actualizar}">Modificar</th>
+                        <th th:text="#{cliente.eliminar}">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,14 +39,17 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
                         <td th:text="${clientes.telefono}"></td>
                         <td th:text="${#nombers.formatDecimal(clientes.credito.limite,3,2)}"
                             style="text-align: right"></td>
-                        <td><a th:href="@{/cliente/modificar} + ${clientes.idcliente}">Modificar</a></td>
-                        <td><a th:href="@{/cliente/eliminar} + ${clientes.idcliente}">Eliminar</a></td>
+                        <td><a th:href="@{/cliente/modificar} + ${clientes.idcliente}"
+                               th:text="#{accion.actualizar}">Modificar</a></td>
+                        <td><a th:href="@{/cliente/eliminar} + ${clientes.idcliente}"
+                               th:text="#{accion.eliminar}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div th:if="${cliente != null or cliente.empty}">
-            No tenemos lista de clientes que mostrar...
+            <p th:text="@{cliente.no_mostrar}">No tenemos lista de articulos que 
+                mostrar...</p>
         </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>

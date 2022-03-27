@@ -13,8 +13,8 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
         <header th:replace="layout/plantilla :: header"/><!-- Ruta de la plantilla 
         y luego el nombre de la plantilla a utilizar-->
         <div class="contenido">
-        <h2>Listado de Categorias</h2>
-        <a th:href="@{/categoria/nuevo}">Nueva Categoria</a> <!-- Los modelos se llaman 
+        <h2 th:text="#{categoria.titulo}">Listado de Categorias</h2>
+        <a th:href="@{/categoria/nuevo}" th:text="#{categoria.nuevo}">Nueva Categoria</a> <!-- Los modelos se llaman 
         en las vistas por medio de una expresión lambda (función que no está vinculada 
         a un identificador): ${objeto del modelo}. Esto lo que hace es pasar una
         variable por medio del model.-->
@@ -22,8 +22,10 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Activa</th>
+                        <th th:text="#{categoria.descripcion}">Descripcion</th>
+                        <th th:text="#{categoria.activo}">Activa</th>
+                        <th th:text="#{categoria.actualizar}">Actualizar</th>
+                        <th th:text="#{categoria.eliminar}">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,14 +33,17 @@ muestran al usuario y solamente funcionan en la carpeta templates o plantillas--
                         <td th:text="${categoria.descripcion}"></td>
                         <td><input type="checkbox" name="activo" th:checked="${categoria.activo}" 
                                    disabled="true"></td>
-                        <td><a th:href="@{/categoria/modificar/} + ${categoria.idcategoria}">Modificar</a></td>
-                        <td><a th:href="@{/categoria/eliminar/} + ${categoria.idcategoria}">Eliminar</a></td>
+                        <td><a th:href="@{/categoria/modificar/} + ${categoria.idcategoria}"
+                               th:text="#{accion.actualizar}">Modificar</a></td>
+                        <td><a th:href="@{/categoria/eliminar/} + ${categoria.idcategoria}"
+                               th:text="#{accion.eliminar}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div th:if="${categorias != null or categorias.empty}">
-            No tenemos lista de categorias que mostrar...
+            <p th:text="@{categoria.no_mostrar}">No tenemos lista de articulos que 
+                mostrar...</p>
         </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
