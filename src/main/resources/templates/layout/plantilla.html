@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -10,7 +11,9 @@
             una hoja de estilos en CSS-->
             <nav class="nav"><!-- Esta etiqueta es para ilustrarle al navegador que es un menú -->
                 <a th:href="@{/}" class="logo nav-link">TechShop</a>
-                <ul class="nav-menu">
+                <ul class="nav-menu" sec:authorize="hasRole('ROLE_VENDEDOR)">/*Con la 
+                    libreria sec Security de Thymeleaf importada, el menú solamente
+                    se mostrará si se cuenta con el rol especificado.*/
                     <li class="nav-menu-item">
                         <a th:href="@{cliente/listado}" class="nav-menu-link nav-link" 
                         th:text="#{plantilla.clientes}">Clientes</a></li><!-- 
@@ -20,16 +23,32 @@
                         <a th:href="@{categoria/listado}" class="nav-menu-link nav-link" 
                         th:text="#{plantilla.categorias}">Categorias</a></li>
                     <li class="nav-menu-item">
-                        <a th:href="@{articulo/listado}" class="nav-menu-link nav-link" 
-                        th:text="#{plantilla.articulos}">Articulos</a></li>
+                        <a th:href="@{articulos/listado}" class="nav-menu-link nav-link" 
+                        th:text="#{plantilla.articulos}">Categorias</a></li>
+                    <li class="nav-menu-item" sec:authorize="hasRole('ROLE_ADMIN)">
+                        <a th:href="@{admin/listado}" class="nav-menu-link nav-link" 
+                        th:text="#{plantilla.admin}">Admin</a></li>
                 </ul>
             </nav>
         </header>
         <footer th:fragment="footer" class="footer">
-            <p>&COPY [[#{plantilla.derechos}]]
+            <div>&COPY [[#{plantilla.derechos}]]
                 <a th:href="@{/(lang=es)}">ES</a> | /*"lang=es"= Lenguaje = Español*/
-                <a th:href="@{/(lang=en)}">EN</a>   /*"lang=es"= Lenguaje = Inglés*/
-            </p>
+                <a th:href="@{/(lang=en)}">EN</a> |  /*"lang=es"= Lenguaje = Inglés*/
+                [[#{plantilla.tusuario}]]: <span sec:authentication="name">xx</span> |
+                [[#{plantilla.tusuario}]]: <span sec:authentication="principal.authorities">s</span>
+                <form method="POST" th:action="@{/logout}" style="display: inline">/*
+                    Formulario que utiliza método POST por temas de autenticación para 
+                    enviar la solicitud encriptada u oculta. Utiliza la accion con la
+                    palabra reservada Logout de Thymeleaf para indicarle al navegador 
+                    que el usuario desea desloguearse. El Style display inline lo que 
+                    hace es eliminar el enter por defecto para que la opción del Logout
+                    se muestre en la misma línea de la selección de idioma.*/
+                    <a href="#" onclick="this.parentNode.submit();">[[#{plantilla.logout}]]</a>/*El método
+                    onclick lo que hace es enviar la solicitud de Logout mediante el 
+                    th:action="@{/logout}" de Thymeleaf*/
+                </form>
+            </div>
         </footer>
     </body>
 </html>

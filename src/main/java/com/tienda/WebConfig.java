@@ -47,8 +47,11 @@ public class WebConfig implements WebMvcConfigurer{/*Clase que forma parte del
     }
     
     @Override
-    public void addViewControllers(ViewControllerRegistry registro){
-        registro.addViewController("/").setViewName("crear");
+    public void addViewControllers(ViewControllerRegistry registro){/*El método 
+        registra unas vistas que no deben pasar por un controlador para que sean 
+        ubicados y utilizados en el sitio web. Se ingresan las páginas de login 
+        y las de errores*/
+        registro.addViewController("/").setViewName("/nuevaPersona");
         registro.addViewController("/login");
         registro.addViewController("/errores/403").setViewName("/errores/403");
     }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <style>
+            .contenido{
+                text-align: center;
+                border-radius: 20px;/*Bordes redondiados*/
+                top: 50%;
+                left: 50%;
+                margin-left: -200px;
+                margin-top: -125px;
+                width: 400px;
+                height: 250px;
+                background-color: grey;
+                position: fixed;/*posición fija*/
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenido">
+            <h2 th:text="#{login.login}">Login</h2>
+            <form method="POST" th:action="@{/login}">
+                <label for="username" th:text="#{login.username}">Usuario:</label>
+                <br/>
+                <input type="text" name="username" id="username"/>/*Los nombre username
+                son mandatorios en este caso ya que son los que utiliza security Spring
+                para realizar la accion de log in, no se pueden cambiar los nombres.*/
+                <br/><br/>
+                <label for="password" th:text="#{login.password}">Contraseña:</label>
+                <br/>
+                <input type="password" name="password" id="password"/>
+                <br/><br/>
+                <button type="submit" value="Login" th:text="#{login.login}">Login</button>
+            </form>
+        </div>
+    </body>
+</html>

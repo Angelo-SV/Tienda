@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <style>
+            .contenido{
+                text-align: center;
+                border-radius: 20px;/*Bordes redondiados*/
+                top: 50%;
+                left: 50%;
+                margin-left: -250px;
+                margin-top: -75px;
+                width: 500px;
+                height: 150px;
+                background-color: red;
+                position: fixed;/*posición fija*/
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenido">
+            <h2>[[#{e403.titulo}]]</h2>
+            <p>[[#{e403.texto}]]</p>
+            <a th:href="@{/}">[[#{accion.regresar}]]</a>/*Al brindar el mensaje
+            de error, brinda un enlace al usuario para volver al index*/
+        </div>
+    </body>
+</html>
